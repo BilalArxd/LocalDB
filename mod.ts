@@ -1,5 +1,3 @@
-import { bold } from './deps.ts';
-
-export function getGreeting(): string {
-	return bold('Hello World from 🦕');
-}
+export * from './src/collection.ts';
+export * from './src/types.ts';
+export * from './src/localStorage.ts';

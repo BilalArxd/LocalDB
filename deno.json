@@ -1,6 +1,6 @@
 {
 	"tasks": {
-		"test": "deno test",
-		"example": "deno run examples/helloWorld.ts"
+		"test": "deno test --watch",
+		"example": "deno run --watch=examples/,src/,mod.ts,deps.ts examples/example.ts"
 	}
 }
