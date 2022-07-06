@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        deno: [1.23.3, 1.22.3, 1.23.3]
+        deno: [1.23.3, 1.22.3, 1.21.3]
     name: Test with Deno ${{ matrix.deno }} 
 
     steps:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Setup Deno
-        uses: denolib/setup-deno@1.1.0
+        uses: denoland/setup-deno@1.1.0
         with:
           deno-version: ${{ matrix.deno }}
 
