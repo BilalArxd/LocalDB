@@ -1,0 +1,6 @@
+{
+	"tasks": {
+		"test": "deno test",
+		"example": "deno run examples/helloWorld.ts"
+	}
+}

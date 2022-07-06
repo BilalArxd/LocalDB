@@ -1,0 +1,29 @@
+name: Deno
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        deno: [1.23.3, 1.22.3, 1.23.3]
+    name: Test with Deno ${{ matrix.deno }} 
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Deno
+        uses: denolib/setup-deno@2.3.0
+        with:
+          deno-version: ${{ matrix.deno }}
+
+      - name: Cache Dependecies
+        run: deno cache deps.ts
+
+      - name: Run tests
+        run: deno test
