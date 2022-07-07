@@ -5,7 +5,7 @@ import { LocalStorage } from './localStorage.ts';
 export class Collection<T extends Entity> {
 	collection: T[];
 	key: string;
-	storage: IStorage;
+	storage: LocalStorage;
 	constructor(key: string, storageType: StorageType) {
 		this.collection = [];
 		this.key = `collection.${key}`;
@@ -21,7 +21,7 @@ export class Collection<T extends Entity> {
 	}
 
 	private init(): void {
-		this.collection = [];
+		this.collection = [] as T[];
 		this.set(this.collection);
 	}
 
